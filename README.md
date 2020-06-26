@@ -11,6 +11,7 @@ Related ticket: https://github.com/ionic-team/ionic/issues/21597
 
 
 **What you can see there:**
+
 -A very basic page that is using a generic wrapper component for ion-header/content
 
 -This results in content size being wrongly calculated
