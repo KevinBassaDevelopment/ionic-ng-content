@@ -1,0 +1,30 @@
+<!-- 
+  -Here we get the editional element in dom 'app-shell-basic', between  app-home  & ion-header
+  -It breaks the ionic behavior (e.g. correctly sizing scroll view)
+
+  -Workaround: manually add class="ion-page" to app-shell-basic
+
+  -Ionic dev mentioned ion-page should NOT be manually assigned. 
+  -What solution can be used to work with ionic and ng-content?
+-->
+<app-shell-basic [ngClass]="{'ion-page': useWorkaround===true}" (backBtnClick)="this.backButtonAction()" (customRefreshEvent)="homeRefreshEvent($event)"
+  (customEvent)=" this.toggleWorkaround()">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Blank</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <div id="container">
+    <strong>Ready to create awesome reusable components?</strong>
+    <p>Start with <a target="_blank" rel="noopener noreferrer" href="https://blog.angular-university.io/angular-ng-content/">angular ng-content</a></p>
+    <p> All home page countent should be centered in screen</p>
+  </div>
+
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button id="ionFabOpenFabsBtn" size="small" fill="outline">
+      <ion-icon name="help"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
+</app-shell-basic>

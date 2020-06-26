@@ -1,0 +1,33 @@
+<!-- header that is reused on many pages -->
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start" *ngIf="showBackBtn">
+      <ion-button (click)="backButtonAction()">
+        <ion-icon slot="icon-only" name="arrow-back"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-label>Click here to toggle workaround (class 'ion-page'):</ion-label>
+      <ion-button (click)="customAction()">
+        <ion-icon slot="icon-only" name="bulb"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <!-- refresher that is used on many pages -->
+  <ion-refresher class="datarefresher" slot="fixed" (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+
+  <!-- here is the actual page content -->
+  <ng-content></ng-content>
+
+</ion-content>
+
+
+<!-- here comes all ion-fabs and ion-footers-->
+<ng-content select="ion-fab"></ng-content>
+<ng-content select="ion-footer"></ng-content>
